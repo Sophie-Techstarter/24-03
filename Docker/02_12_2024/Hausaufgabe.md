@@ -155,7 +155,6 @@ Erstelle eine `Dockerfile` mit folgenden Anforderungen:
  
 - **Screenshot:** Terminalausgabe des Startbefehls und des Ergebnisses von `docker ps`.
     
-
 ---
 
 #### **5. Die Seite aufrufen**
