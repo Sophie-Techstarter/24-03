@@ -32,7 +32,7 @@
     - Erkläre, warum die erstellte Datei nicht mehr vorhanden ist.
     
     **Screenshot:**  
-    Mach einen Screenshot, der zeigt, dass die Datei nach dem Neustart des Containers nicht mehr vorhanden ist.
+    Mach einen Screenshot, der zeigt, dass die Datei nicht mehr vorhanden ist.
     
 5. **Verwendung von Volumes:**
     
