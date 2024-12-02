@@ -28,8 +28,8 @@
     
 4. **Datenpersistenz in Docker:**
     
-    - Starte einen neuen Container und wiederhole den Schritt der Datei-Erstellung. Beachte dabei, dass der Container nach dem Verlassen ohne die Daten aus Schritt 2 neu gestartet wird.
-    - Erkläre, warum die erstellte Datei nach einem Neustart des Containers nicht mehr vorhanden ist.
+    - Starte einen neuen Container und wiederhole den Schritt der Datei-Erstellung. 
+    - Erkläre, warum die erstellte Datei nicht mehr vorhanden ist.
     
     **Screenshot:**  
     Mach einen Screenshot, der zeigt, dass die Datei nach dem Neustart des Containers nicht mehr vorhanden ist.
