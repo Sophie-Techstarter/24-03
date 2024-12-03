@@ -25,4 +25,6 @@ docker exec app1 ping -c 3 app2
 FROM nginx
 RUN apt-get update && apt-get install -y iputils-ping
 ```
-
+```
+docker run -it --rm --name container1 --network demo-network busybox:latest
+```
