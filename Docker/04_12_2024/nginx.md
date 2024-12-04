@@ -1,5 +1,5 @@
 
-# **Zero to Hero: Nginx als Reverse Proxy mit Docker und Node.js **
+# Zero to Hero: Nginx als Reverse Proxy mit Docker und Node.js 
 
 ## **Zielsetzung**
 - **Lernziele**:
