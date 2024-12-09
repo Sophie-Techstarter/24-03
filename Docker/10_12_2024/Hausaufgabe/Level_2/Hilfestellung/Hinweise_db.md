@@ -1,3 +1,5 @@
+
+```pseudocode
 Lade Umgebungsvariablen aus ".env" Datei
 
 VERSUCHE
@@ -19,3 +21,6 @@ ERSTELLE ein Schema für Todos mit den Feldern:
 ERSTELLE ein Modell basierend auf dem "Todo"-Schema
 
 EXPORTIERE die Funktion zum Verbinden mit der Datenbank und das "Todo"-Modell
+```
+
+
