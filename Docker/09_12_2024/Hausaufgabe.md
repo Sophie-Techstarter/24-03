@@ -1,6 +1,4 @@
-Hier sind die allgemeinen Fragen zu DevOps und die grundlegenden Konzepte in realistische Szenarien eingebettet, um den Kontext und die Anwendung der Ideen verständlicher zu machen:
-
----
+# Hausaufgabe
 
 ### **1. Szenario: Ein kleines Start-up möchte effizienter arbeiten**
 Das Start-up hat ein kleines Team von Entwicklern und Administratoren. Der Entwicklungsprozess ist langsam, und es gibt häufig Konflikte zwischen Entwicklern und dem Betriebsteam, da neue Funktionen die bestehenden Systeme beeinträchtigen.  
