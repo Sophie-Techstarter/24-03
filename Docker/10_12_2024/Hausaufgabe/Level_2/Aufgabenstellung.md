@@ -17,7 +17,13 @@ Erstelle eine `.env`-Datei im Stammverzeichnis des Projekts, um sensible Umgebun
 ### 3. **Erstelle die MongoDB-Verbindung und Testdatenlogik**
 
 Erstelle eine Datei `database.js`, um die Verbindung zu MongoDB herzustellen und Testdaten einzufügen:
-Solltest du Hilfe hierfür brauchen, kannst du dir [hier](https://github.com/Sophie-Techstarter/24-03/blob/main/Docker/10_12_2024/Hausaufgabe/Level_2/Hilfestellung/database.js) Hilfe für die Datei suchen. Aber Achtung! Versuche es gerne erst einmal alleine. 
+Solltest du Hilfe hierfür brauchen, kannst du dir [hier](https://github.com/Sophie-Techstarter/24-03/blob/main/Docker/10_12_2024/Hausaufgabe/Level_2/Hilfestellung/Hinweise_db.md) Hilfe für die Datei suchen. 
+
+
+Sollte auch das nicht ausreichen, darfst du dir gerne noch weitere Hilfe suchen.
+Aber Achtung! Versuche es gerne erst einmal alleine. 
+
+Bereit? Dann [hier]((https://github.com/Sophie-Techstarter/24-03/blob/main/Docker/10_12_2024/Hausaufgabe/Level_2/Hilfestellung/database.js) entlang.
 
 ### 4. **Backend-Server erstellen (Express API)**
 
