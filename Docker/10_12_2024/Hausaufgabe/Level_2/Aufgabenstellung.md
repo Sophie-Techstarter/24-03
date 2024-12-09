@@ -23,7 +23,7 @@ Solltest du Hilfe hierfür brauchen, kannst du dir [hier](https://github.com/Sop
 Sollte auch das nicht ausreichen, darfst du dir gerne noch weitere Hilfe suchen.
 Aber Achtung! Versuche es gerne erst einmal alleine. 
 
-Bereit? Dann [hier]((https://github.com/Sophie-Techstarter/24-03/blob/main/Docker/10_12_2024/Hausaufgabe/Level_2/Hilfestellung/database.js) entlang.
+Bereit? Dann [hier](https://github.com/Sophie-Techstarter/24-03/blob/main/Docker/10_12_2024/Hausaufgabe/Level_2/Hilfestellung/database.js) entlang.
 
 ### 4. **Backend-Server erstellen (Express API)**
 
