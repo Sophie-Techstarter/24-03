@@ -30,13 +30,18 @@ Erstelle eine Datei `database.js`, um die Verbindung zu MongoDB herzustellen und
 require('dotenv').config();
 const mongoose = require('mongoose');
 
+// Datenbankschema für "todos"
+const todoSchema = new mongoose.Schema({
+    text: { type: String, required: true },
+    isComplete: { type: Boolean, default: false },
+});
+
+const Todo = mongoose.model('Todo', todoSchema);
+
 // MongoDB-Verbindung herstellen
 async function connectToDatabase() {
     try {
-        await mongoose.connect(process.env.MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(process.env.MONGO_URI);
         console.log('Erfolgreich mit MongoDB verbunden');
 
         // Testdaten einfügen, falls noch keine Todos vorhanden sind
@@ -51,8 +56,12 @@ async function connectToDatabase() {
                 { text: 'React lernen', isComplete: false },
             ];
 
-            await Todo.insertMany(todos);
-            console.log('Testdaten erfolgreich hinzugefügt');
+            try {
+                await Todo.insertMany(todos);
+                console.log('Testdaten erfolgreich hinzugefügt');
+            } catch (insertError) {
+                console.error('Fehler beim Einfügen der Testdaten:', insertError.message);
+            }
         }
     } catch (err) {
         console.error('Fehler beim Verbinden mit MongoDB:', err.message);
@@ -60,13 +69,17 @@ async function connectToDatabase() {
     }
 }
 
-// Datenbankschema für "todos"
-const todoSchema = new mongoose.Schema({
-    text: { type: String, required: true },
-    isComplete: { type: Boolean, default: false },
+// Verbindung schließen, wenn der Prozess beendet wird
+process.on('SIGINT', async () => {
+    try {
+        await mongoose.connection.close();
+        console.log('MongoDB-Verbindung geschlossen');
+        process.exit(0);
+    } catch (err) {
+        console.error('Fehler beim Schließen der MongoDB-Verbindung:', err.message);
+        process.exit(1);
+    }
 });
-
-const Todo = mongoose.model('Todo', todoSchema);
 
 module.exports = { connectToDatabase, Todo };
 ```
