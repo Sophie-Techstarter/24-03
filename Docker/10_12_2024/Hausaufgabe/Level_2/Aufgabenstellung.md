@@ -40,6 +40,64 @@ In MongoDB werden Mongoose-Methoden genutzt:
 - Löschen: `Todo.findByIdAndDelete(id)`
 - Aktualisieren: `Todo.findByIdAndUpdate(id, { text, isComplete })`
 
+  ### Zusammenfassung:
+
+- **SQLite** ist eine **synchrone** Datenbank, bei der die meisten Operationen sofort abgeschlossen sind. Daher sind keine `await`-Befehle nötig, da der Code direkt nach der Operation fortgesetzt wird.
+- **MongoDB** ist eine **asynchrone** Datenbank, die über das Netzwerk arbeitet. Hier wird `await` benötigt, um auf das Ergebnis der Datenbankoperationen zu warten, ohne den Programmablauf zu blockieren.
+
+### Beispiele:
+
+### SQLite (Synchron):
+In diesem Beispiel nehmen wir an, wir arbeiten mit einer Datenbank für **Benutzer**:
+
+```javascript
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('users.db');
+
+// Abrufen aller Benutzer
+app.get('/users', (req, res) => {
+  db.all('SELECT * FROM users', (err, rows) => {
+    if (err) res.status(500).send('Fehler beim Abrufen der Benutzer');
+    else res.json(rows);  // Gibt eine Liste aller Benutzer zurück
+  });
+});
+
+// Erstellen eines neuen Benutzers
+app.post('/users', (req, res) => {
+  db.run('INSERT INTO users (name, email) VALUES (?, ?)', [req.body.name, req.body.email], function (err) {
+    if (err) res.status(500).send('Fehler beim Erstellen des Benutzers');
+    else res.status(201).json({ id: this.lastID, name: req.body.name, email: req.body.email });  // Gibt den neu erstellten Benutzer zurück
+  });
+});
+```
+
+### MongoDB (Asynchron mit `await`):
+Nun ein Beispiel für die Arbeit mit einer MongoDB-Datenbank, die **Produkte** speichert:
+
+```javascript
+const Product = require('./models/Product');
+
+// Abrufen aller Produkte
+app.get('/products', async (req, res) => {
+  try {
+    const products = await Product.find();  // Wartet auf die Abfrage der Produkte
+    res.json(products);  // Gibt eine Liste aller Produkte zurück
+  } catch (err) {
+    res.status(500).send('Fehler beim Abrufen der Produkte');
+  }
+});
+
+// Erstellen eines neuen Produkts
+app.post('/products', async (req, res) => {
+  try {
+    const newProduct = await Product.create({ name: req.body.name, price: req.body.price });  // Wartet auf die Erstellung des Produkts
+    res.status(201).json(newProduct);  // Gibt das neu erstellte Produkt zurück
+  } catch (err) {
+    res.status(500).send('Fehler beim Erstellen des Produkts');
+  }
+});
+```
+
 
 ### 5. **MongoDB-Container starten**
 
