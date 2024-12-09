@@ -192,8 +192,8 @@ docker buildx build -t node-backend .
 docker run --name node-backend \
   --env-file .env \
   -p 5000:5000 \
-  --link mongo-container \
-  -d node-backend
+  --network app-network \
+  -d node-backen
 ```
 
 ### 7. **Testdaten in der MongoDB-Datenbank prüfen**
