@@ -111,36 +111,9 @@ Starte einen MongoDB-Container.
 
 ### 6. **Backend-Container bauen und starten**
 
-Baue und starte das Backend in einem Docker-Container:
+Baue und starte das Backend in einem Docker-Container
 
-### 7. **Testdaten in der MongoDB-Datenbank prüfen**
-
-Um sicherzustellen, dass die Testdaten in der MongoDB-Datenbank eingefügt wurden, kannst du die MongoDB-Shell oder ein GUI-Tool wie MongoDB Compass verwenden.
-
-- Verbinde dich zur MongoDB-Shell:
-
-```bash
-mongo -u root -p deinPasswort --authenticationDatabase admin
-```
-
-- Wähle die Datenbank und überprüfe die Todos:
-
-```bash
-use todos_db;
-db.todos.find();
-```
-
-Du solltest jetzt die eingefügten Testdaten sehen:
-
-```json
-[
-  { "_id": "5f3d55b7b8b88d3c6b8a0c1e", "text": "Python auffrischen", "isComplete": false },
-  { "_id": "5f3d55b7b8b88d3c6b8a0c1f", "text": "JavaScript üben", "isComplete": false },
-  { "_id": "5f3d55b7b8b88d3c6b8a0c20", "text": "React lernen", "isComplete": false }
-]
-```
-
-### 8. **API testen**
+### 7. **API testen**
 
 Jetzt kannst du die API testen, indem du zu `http://localhost:5000/todos` gehst (z. B. über Postman oder den Browser).
 
