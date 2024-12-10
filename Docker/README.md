@@ -6,11 +6,11 @@ Ein super Cheatsheet findet ihr [hier](https://dockerlabs.collabnix.com/docker/c
 
 ## Material
 
-https://docker-handbook.farhan.dev/
-https://softchris.github.io/pages/docker-one.html#resources
-https://training.play-with-docker.com/
-https://learn.microsoft.com/de-de/training/modules/intro-to-docker-containers/
-https://learn.microsoft.com/de-de/visualstudio/docker/tutorials/docker-tutorial
+- https://docker-handbook.farhan.dev/
+- https://softchris.github.io/pages/docker-one.html#resources
+- https://training.play-with-docker.com/
+- https://learn.microsoft.com/de-de/training/modules/intro-to-docker-containers/
+- https://learn.microsoft.com/de-de/visualstudio/docker/tutorials/docker-tutorial
 
 ---
 ## Aufräum Befehle
