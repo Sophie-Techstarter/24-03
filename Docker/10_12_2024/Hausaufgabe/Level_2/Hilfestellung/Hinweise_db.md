@@ -2,6 +2,8 @@
 ```pseudocode
 Lade Umgebungsvariablen aus ".env" Datei
 
+ERSTELLE ein Modell basierend auf dem "Todo"-Schema
+
 VERSUCHE
     Verbinde mit MongoDB unter Verwendung der Umgebungsvariablen (MONGO_URI)
     Warte bis die Verbindung hergestellt ist
@@ -17,8 +19,6 @@ FANGE Fehler ab
 ERSTELLE ein Schema für Todos mit den Feldern:
     text (Pflichtfeld, Typ: String)
     isComplete (optional, Typ: Boolean, Standardwert: false)
-
-ERSTELLE ein Modell basierend auf dem "Todo"-Schema
 
 EXPORTIERE die Funktion zum Verbinden mit der Datenbank und das "Todo"-Modell
 ```
