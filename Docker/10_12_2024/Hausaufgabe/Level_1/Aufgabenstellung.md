@@ -193,7 +193,7 @@ docker run --name node-backend \
   --env-file .env \
   -p 5000:5000 \
   --network app-network \
-  -d node-backen
+  -d node-backend
 ```
 
 ### 7. **Testdaten in der MongoDB-Datenbank prüfen**
