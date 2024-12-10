@@ -175,7 +175,7 @@ Starte einen MongoDB-Container mit folgendem Befehl:
 
 ```bash
 docker run --name mongo-container \
- --network app-network
+  --network app-network \
   -e MONGO_INITDB_ROOT_USERNAME=root \
   -e MONGO_INITDB_ROOT_PASSWORD=deinPasswort \
   -e MONGO_INITDB_DATABASE=todos_db \
