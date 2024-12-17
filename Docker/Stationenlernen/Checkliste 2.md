@@ -23,7 +23,7 @@ https://docker-curriculum.com/
 - [ ] Static Sites  
 
 ---
-
+ändert bitte die `requirements.txt` auf `Flask==3.0.0` um
 ### **Docker Images**
 - [ ] Our First Image  
 - [ ] Dockerfile  
