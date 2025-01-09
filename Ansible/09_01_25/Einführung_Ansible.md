@@ -106,3 +106,50 @@ Erstelle eine Markdown-Tabelle, die die Serverinformationen enthält. Zum Beispi
 - **Group**: Die Gruppe, zu der der Server gehört.
 - **Port**: Der Port, über den der Server erreichbar ist.
 - **User**: Der Benutzername für die Verbindung.
+
+### **2. INI-Datei manuell erstellen**
+
+Folge diesen Schritten, um aus der Tabelle eine INI-Datei zu erstellen:
+
+### **a) Gruppierungen identifizieren**
+
+- Gruppiere die Server nach der Spalte `Group`. In diesem Beispiel gibt es zwei Gruppen: `web` und `db`.
+
+### **b) Formatierung für jede Gruppe**
+
+- Schreibe den Gruppennamen in eckige Klammern `[]`.
+- Liste alle Server der Gruppe auf.
+- Verwende die Syntax:
+    
+    ```
+    <Hostname> ansible_host=<IP Address> ansible_port=<Port> ansible_user=<User>
+    
+    ```
+    
+
+### **c) Beispiel-Umsetzung**
+
+Basierend auf der Markdown-Tabelle ergibt sich folgendes INI-Format:
+
+```
+[web]
+server1 ansible_host=192.168.1.1 ansible_port=22 ansible_user=ubuntu
+server3 ansible_host=192.168.1.3 ansible_port=22 ansible_user=root
+
+[db]
+server2 ansible_host=192.168.1.2 ansible_port=3306 ansible_user=admin
+
+```
+
+---
+
+### **3. Validierung**
+
+Nach Erstellung der INI-Datei kannst du sie mit Ansible validieren:
+
+1. Speichere die Datei als `inventory.ini`.
+2. Führe den folgenden Befehl aus, um die Struktur zu überprüfen:
+    
+    ```bash
+    ansible-inventory --list -i inventory.ini
+    ```
