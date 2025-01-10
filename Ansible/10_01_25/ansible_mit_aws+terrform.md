@@ -8,6 +8,35 @@
 
 `aws configure sso`
 
+### Neue Anleitung zur Installation von AWS CLI
+
+1. **Herunterladen der AWS CLI Installationsdatei:**
+   ```bash
+   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   ```
+
+2. **Installation von `unzip`, falls noch nicht vorhanden:**
+   ```bash
+   sudo apt install unzip
+   ```
+
+3. **Entpacken der heruntergeladenen ZIP-Datei:**
+   ```bash
+   unzip awscliv2.zip
+   ```
+
+4. **Installation der AWS CLI:**
+   ```bash
+   sudo ./aws/install
+   ```
+
+5. **Überprüfung der Installation:**
+   ```bash
+   aws --version
+   ``` 
+
+> Diese Anleitung gilt für Linux-Systeme mit apt-Paketmanager. 
+
 **Key Pair in der AWS-Konsole erstellen**:
 
 - Gehe zu der **AWS EC2 Konsole**.
