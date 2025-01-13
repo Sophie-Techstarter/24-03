@@ -121,9 +121,6 @@ Nun erweitern wir das Playbook, um `cowsay` zu installieren und dann mit SSH zu 
 
 # Teil 2
 
-Hier ist die angepasste Version deines Plans, bei dem **Nginx** anstelle von Apache verwendet wird:
-
----
 
 ### 1. **Webserver mit Nginx konfigurieren**
 
