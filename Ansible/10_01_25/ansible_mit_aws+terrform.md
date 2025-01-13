@@ -326,7 +326,6 @@ ansible_python_interpreter=/usr/bin/python3
   
 
   - Überprüft, ob die Hosts erreichbar sind und Ansible korrekt mit ihnen kommunizieren kann.
-  - Dies geschieht vor der Installation von `cowsay`.
 2. Der Rest des Playbooks bleibt wie zuvor, stellt jedoch sicher, dass nur erreichbare Server bearbeitet werden.
 
 Wenn ein Server nicht erreichbar ist, bricht das Playbook für diesen Host ab, und die nachfolgenden Schritte werden nicht ausgeführt.
