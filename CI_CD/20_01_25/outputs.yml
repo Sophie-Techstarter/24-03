@@ -1,0 +1,36 @@
+name: outputs
+
+on:
+    # Triggers the workflow on push or pull request events but only for the "main" branch
+    push:
+      branches: ['main']
+    pull_request:
+      branches: ['main']
+
+# Github Action Benennung 
+jobs:
+    # Ziel von ouputs: outputs von job 1 zu job 2 zu übergeben
+    job1:
+        runs-on: ubuntu-latest
+        outputs:
+            output1: ${{ steps.schritt1.outputs.test }}
+            output2: ${{ steps.schritt1.outputs.test2 }}
+        steps:
+            # wir generieren einen Output, der an Job 2 übergeben wird
+            - id: schritt1
+              run: |
+                echo "test=hallo" >> "$GITHUB_OUTPUT"
+                echo "test2=Welt" >> "$GITHUB_OUTPUT"
+
+    # unsere Benennung
+    job2:
+        runs-on: ubuntu-latest
+        # Github Action Benennung
+        needs: job1
+        steps:
+            # unsere Benennung
+            - name: Verwende den Output von Job1
+              env:
+                OUTPUT1: ${{ needs.job1.outputs.output1 }}
+                OUTPUT2: ${{ needs.job1.outputs.output2 }}
+              run: echo $OUTPUT1 $OUTPUT2
