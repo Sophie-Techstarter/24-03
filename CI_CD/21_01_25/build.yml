@@ -1,0 +1,57 @@
+name: react-build
+
+on:
+  push:
+    branches:
+        - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            # build Job soll den build Ordner als Artefakt hochladen
+
+            # Schritt 1: Code auschecken
+            - name: Checkt out code
+              uses: actions/checkout@v4
+
+            # Schritt 2: Node.js installieren
+            # wir probieren aus diesen Schritt wegzulassen
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 22
+
+            # Schritt 3: Abhängigkeiten installieren
+            - name: Install dependencies
+              run: npm install
+
+            # Schritt 4: Projekt-build bauen
+            - name: Build project
+              run: npm run build
+
+            # Schritt 5: Build Ergebnisse hochladen
+            - name: upload build artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name: build
+                path: build/
+    test:
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+            # Test Job soll das Artefakt herunterladen
+          - name: Download build artifact
+            uses: actions/download-artifact@v4
+            with:
+                name: build
+                path: ./downloaded-build
+
+          - name: Validate build output
+            run: |
+              if [ ! -f ./downloaded-build/index.html ]; 
+              then
+                echo "index.html not found in build output!"
+                exit 1
+              fi
+              echo "Build contains index.html - validation passed."
